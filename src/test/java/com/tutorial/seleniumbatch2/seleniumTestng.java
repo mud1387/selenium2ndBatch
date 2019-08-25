@@ -6,19 +6,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
-public class firstCode {
+public class seleniumTestng {
 
-public static void main(String[] args) throws InterruptedException {
+@Test	
+public void testFb() throws InterruptedException {
 		
  		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\resources\\chromedriver_win32\\chromedriver.exe");
  		WebDriver driver= new ChromeDriver();
- 		driver.get("https: www.facebook.com");
+ 		driver.get("https:www.facebook.com");
  		driver.manage().window().maximize();
  		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
  		driver.findElement(By.id("email")).sendKeys("test");
  		driver.findElement(By.id("pass")).sendKeys("test");
- 		driver.findElement(By.xpath(" input[@value='Log In']")).click();
+ 		driver.findElement(By.xpath("//input[@value='Log In']")).click();
  		Thread.sleep(3000);
  		WebElement alert=driver.findElement(By.cssSelector("div[class='pam _3-95 uiBoxRed']"));
  		if(alert.isDisplayed()) {
@@ -36,8 +38,8 @@ public static void main(String[] args) throws InterruptedException {
  			Thread.sleep(3000);
  			WebElement recover= driver.findElement(By.xpath(" div[contains(text(),'Please enter your email or phone number to search for your account.')]"));
  			if (recover.isDisplayed()) {
- 				driver.findElement(By.xpath(" span[contains(text(),'Cancel')]")).click();
- 				if(driver.findElement(By.xpath(" span[contains(text(),'Log Into Facebook')]")).isDisplayed()) {
+ 				driver.findElement(By.xpath("//span[contains(text(),'Cancel')]")).click();
+ 				if(driver.findElement(By.xpath("//span[contains(text(),'Log Into Facebook')]")).isDisplayed()) {
  				System.out.println("Test case passed");
  				}
  				else {
@@ -64,4 +66,16 @@ public static void main(String[] args) throws InterruptedException {
 	
 	
 	}
+
+@Test
+public void printSomething() {
+	System.out.println("Hello");
+}
+
+@Test
+public void printSomethingExtra() {
+	int div= 1/0;
+	System.out.println(div);
+}
+
 }

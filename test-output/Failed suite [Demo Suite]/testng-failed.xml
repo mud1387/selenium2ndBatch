@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite configfailurepolicy="continue" thread-count="1" parallel="tests" name="Failed suite [Failed suite [Demo Suite]]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="tests" name="automation(failed)(failed)">
+    <classes>
+      <class name="com.tutorial.seleniumbatch2.seleniumTestng">
+        <methods>
+          <include name="printSomethingExtra"/>
+        </methods>
+      </class> <!-- com.tutorial.seleniumbatch2.seleniumTestng -->
+    </classes>
+  </test> <!-- automation(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Demo Suite]] -->
